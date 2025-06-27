@@ -11,6 +11,7 @@ import {
   Box,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 import ShortUrlDisplay from './ShortUrlDisplay';
 
 // Styled Components
@@ -63,6 +64,7 @@ const ShortenerForm = () => {
   const [expiry, setExpiry] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -89,10 +91,11 @@ const ShortenerForm = () => {
     <Box
       sx={{
         minHeight: '100vh',
+        width: '100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        background: 'linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 50%, #fdf2f8 100%)',
+        background: 'linear-gradient(to right, #e0eafc, #cfdef3)',
         padding: 2,
       }}
     >
@@ -160,9 +163,33 @@ const ShortenerForm = () => {
               </Alert>
             )}
 
-            {shortLink && <ShortUrlDisplay shortLink={shortLink} expiry={expiry} />}
+            {shortLink && (
+              <Box mt={4}>
+                <ShortUrlDisplay shortLink={shortLink} expiry={expiry} />
+              </Box>
+            )}
           </StyledCardContent>
         </StyledCard>
+
+        <Box sx={{ textAlign: 'center', mt: 3 }}>
+          <Button
+            variant="outlined"
+            onClick={() => navigate('/stats')}
+            sx={{
+              borderRadius: '12px',
+              padding: '10px 20px',
+              fontWeight: 600,
+              color: '#5a67d8',
+              borderColor: '#5a67d8',
+              '&:hover': {
+                backgroundColor: '#edf2f7',
+                borderColor: '#434190',
+              },
+            }}
+          >
+            View Stats
+          </Button>
+        </Box>
 
         <Box sx={{ textAlign: 'center', mt: 4 }}>
           <Typography variant="body2" color="text.secondary">

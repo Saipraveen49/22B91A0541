@@ -17,19 +17,12 @@ const ShortUrlDisplay = ({ shortLink, expiry }) => {
   };
 
   return (
-    <Box mt={4} p={2} border="1px solid #e5e7eb" borderRadius="16px" bgcolor="#f0f4ff">
+    <Box p={2} border="1px solid #e5e7eb" borderRadius="16px" bgcolor="#f0f4ff">
       <Typography variant="h6" gutterBottom>
         Your Short URL is Ready 🎉
       </Typography>
 
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
-        gap={2}
-        mb={2}
-        flexWrap="wrap"
-      >
+      <Box display="flex" alignItems="center" justifyContent="space-between" gap={2} mb={2} flexWrap="wrap">
         <a href={shortLink} target="_blank" rel="noreferrer">
           <Button endIcon={<OpenInNewIcon />} variant="outlined">
             {shortLink}

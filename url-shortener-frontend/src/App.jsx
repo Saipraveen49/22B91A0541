@@ -1,13 +1,16 @@
-// src/App.jsx
-import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ShortenerForm from './components/ShortenerForm';
+import StatsPage from './components/StatsPage';
 
-const App = () => {
+function App() {
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-500 p-4">
-      <ShortenerForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ShortenerForm />} />
+        <Route path="/stats" element={<StatsPage />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
