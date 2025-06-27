@@ -91,7 +91,7 @@ const ShortenerForm = () => {
     <Box
       sx={{
         minHeight: '100vh',
-        width: '100%',
+        width: '100em',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -99,7 +99,7 @@ const ShortenerForm = () => {
         padding: 2,
       }}
     >
-      <Box sx={{ width: '100%', maxWidth: 500 }}>
+      <Box sx={{ width: '100em', maxWidth: 500 }}>
         <Box sx={{ textAlign: 'center', mb: 4 }}>
           <Typography
             variant="h3"

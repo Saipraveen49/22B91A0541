@@ -41,6 +41,7 @@ const StatsPage = () => {
         justifyContent: 'center',
         alignItems: 'center',
         p: 2,
+        width: '100em',
       }}
     >
       <Paper elevation={4} sx={{ p: 4, maxWidth: 600, width: '100%', borderRadius: '16px' }}>
